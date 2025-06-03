@@ -39,10 +39,10 @@ def connect_mongo():
 
 # Configuración de Elasticsearch
 client = Elasticsearch(
-    "https://indexprueba-cb87f3.es.us-east-1.aws.elastic.cloud:443",
-    api_key="Q3VEYy1KWUJHdDB6RGdJR3gyc0g6cThLVzhJZS05eGxta0Q0NXQxTHYxZw=="
+    "https://c40d836f10a3427a8054aeda8d8d0036.us-central1.gcp.cloud.es.io:443",
+    api_key="X2oyU001Y0JsZHNjeG1kU3JHRjI6OXVSajZqZ1NFTDRNY2l4QUVTZW85QQ=="
 )
-INDEX_NAME = "ucentral_test"
+INDEX_NAME = "dbcentral"
 
 @app.route('/')
 def index():
