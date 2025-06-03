@@ -22,8 +22,8 @@ CREATOR_APP = "Nombre del creador/ruta github"
 mongo_uri   = os.environ.get("MONGO_URI")
 
 if not mongo_uri:
-    #uri = "mongodb+srv://DbCentral:DbCentral2025@cluster0.vhltza7.mongodb.net/?appName=Cluster0"
-    uri         = "mongodb+srv://DbCentral:DbCentral2025@cluster0.vhltza7.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+    #uri = "mongodb+srv://dbcentral:<db_password>@cluster0.gzna4z0.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+    uri         = "mongodb+srv://dbcentral:<db_password>@cluster0.gzna4z0.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
     mongo_uri   = uri
 
 # Función para conectar a MongoDB
