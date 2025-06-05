@@ -59,6 +59,24 @@ def contacto():
         return redirect(url_for('contacto'))
     return render_template('contacto.html', version=VERSION_APP,creador=CREATOR_APP)
 
+@app.route('/ver-contactos')
+def ver_contactos():
+    if 'usuario' not in session or session['usuario'] != 'admin':
+        flash('Acceso no autorizado.', 'error')
+        return redirect(url_for('login'))
+
+    try:
+        client = connect_mongo()
+        db = client['administracion']
+        mensajes = list(db.contactos.find().sort('fecha', -1))
+    except Exception as e:
+        print(f"Error al obtener los mensajes: {e}")
+        mensajes = []
+    finally:
+        if 'client' in locals():
+            client.close()
+
+    return render_template('ver_contactos.html', mensajes=mensajes, usuario=session['usuario'])
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
