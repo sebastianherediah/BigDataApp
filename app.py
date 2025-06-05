@@ -615,9 +615,9 @@ def buscador():
                     }
                 },
                 "aggs": {
-                    "categoria": {
+                    "terminal_nombre": {
                         "terms": {
-                            "field": "categoria",
+                            "field": "terminal_nombre",
                             "size": 10,
                             "order": {"_key": "asc"}
                         }

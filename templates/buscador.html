@@ -40,7 +40,7 @@
                                 <div class="col-md-4">
                                     <label for="search_type" class="form-label">Buscar en:</label>
                                     <select class="form-select" id="search_type" name="search_type" required>
-                                        <option value="texto" {% if search_type == 'texto' %}selected{% endif %}>Texto</option>
+                                        <option value="terminal_nombre" {% if search_type == 'terminal_nombre' %}selected{% endif %}>Nombre terminal</option>
                                         <option value="titulo" {% if search_type == 'titulo' %}selected{% endif %}>Título</option>
                                         <option value="autor" {% if search_type == 'autor' %}selected{% endif %}>Autor</option>
                                         <option value="categoria" {% if search_type == 'categoria' %}selected{% endif %}>Categoría</option>
