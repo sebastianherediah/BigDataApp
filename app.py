@@ -149,7 +149,7 @@ def listar_usuarios():
         # Obtener todos los usuarios, excluyendo la contraseña por seguridad
         #usuarios = list(security_collection.find({}, {'password': 0}))
 
-        usuarios = list(security_collection.find())
+        usuarios = list(security_collection.find({}, {'password': 0}))
         
         # Convertir ObjectId a string para serialización JSON
         for usuario in usuarios:
