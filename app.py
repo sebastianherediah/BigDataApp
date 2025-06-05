@@ -617,14 +617,14 @@ def buscador():
                 "aggs": {
                     "terminal_nombre": {
                         "terms": {
-                            "field": "terminal_nombre",
+                            "field": "terminal_nombre.keyword",
                             "size": 10,
                             "order": {"_key": "asc"}
                         }
                     },
                     "clasificacion": {
                         "terms": {
-                            "field": "clasificacion",
+                            "field": "empresa.keyword",
                             "size": 10,
                             "order": {"_key": "asc"}
                         }
