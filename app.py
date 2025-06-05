@@ -55,7 +55,33 @@ def about():
 @app.route('/contacto', methods=['GET', 'POST'])
 def contacto():
     if request.method == 'POST':
-        # Aquí va la lógica para procesar el formulario de contacto
+        nombre = request.form.get('nombre')
+        email = request.form.get('email')
+        asunto = request.form.get('asunto')
+        mensaje = request.form.get('mensaje')
+
+        if not nombre or not email or not mensaje or not asunto:
+            flash('Todos los campos son obligatorios.', 'error')
+            return redirect(url_for('contacto'))
+
+        try:
+            client = connect_mongo()
+            db = client['administracion']
+            db.contactos.insert_one({
+                'nombre': nombre,
+                'email': email,
+                'asunto': asunto,
+                'mensaje': mensaje,
+                'fecha': datetime.utcnow()
+            })
+            flash('¡Gracias por tu mensaje!', 'success')
+        except Exception as e:
+            print(f"Error al guardar el mensaje: {e}")
+            flash('Ocurrió un error. Intenta más tarde.', 'error')
+        finally:
+            if 'client' in locals():
+                client.close()
+
         return redirect(url_for('contacto'))
     return render_template('contacto.html', version=VERSION_APP,creador=CREATOR_APP)
 
