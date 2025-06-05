@@ -66,7 +66,7 @@ def contacto():
 
         try:
             client = connect_mongo()
-            db = client['administracion']
+            db = client['contactos']
             db.contactos.insert_one({
                 'nombre': nombre,
                 'email': email,
@@ -603,7 +603,7 @@ def buscador():
 
             # Establecer fechas por defecto si están vacías
             if not fecha_desde:
-                fecha_desde = "1500-01-01"
+                fecha_desde = "1900-01-01"
             if not fecha_hasta:
                 fecha_hasta = datetime.now().strftime("%Y-%m-%d")
 
