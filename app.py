@@ -44,11 +44,11 @@ client = Elasticsearch(
 )
 INDEX_NAME = "dbcentral"
 
-@app.route('/')
+@app.route('/',  methods=['GET', 'POST'])
 def index():
     return render_template('index.html', version=VERSION_APP,creador=CREATOR_APP)
 
-@app.route('/about')
+@app.route('/about', methods=['GET', 'POST'])
 def about():
     return render_template('about.html', version=VERSION_APP,creador=CREATOR_APP)
 
