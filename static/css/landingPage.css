@@ -1,6 +1,6 @@
 
 body {
-    background: linear-gradient(to right, #262158, hsl(180, 17%, 98%));
+    background: linear-gradient(to right, #010006, hsl(180, 17%, 98%));
     min-height: 100vh;
     margin: 0;
     padding: 0;
@@ -10,13 +10,13 @@ body {
     padding: 1rem 0;
 }
 .container {
-    background-color: rgba(255, 255, 255, 0.912);
+    background-color: rgba(133, 201, 244, 0.912);
     padding: 2rem;
     border-radius: 10px;
     margin-top: 2rem;
 }
 footer {
-    background-color: rgba(0, 25, 95, 0.9);
+    background-color: rgba(95, 99, 111, 0.9);
     padding: 1rem 0;
     margin-top: 2rem;
     color: #666;
